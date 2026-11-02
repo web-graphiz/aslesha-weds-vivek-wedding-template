@@ -479,6 +479,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Venue address copy handler
+    const copyVenueBtn = document.getElementById('copy-venue-address');
+    if (copyVenueBtn) {
+        copyVenueBtn.addEventListener('click', () => {
+            const venueAddress = "The Leela Palace Chennai, Adyar Seaface, M.R.C. Nagar, Raja Annamalaipuram, Chennai, Tamil Nadu 600028, India";
+            navigator.clipboard.writeText(venueAddress).then(() => {
+                const copyText = copyVenueBtn.querySelector('.copy-text');
+                const copyIcon = copyVenueBtn.querySelector('i');
+                if (copyText) copyText.textContent = "Copied!";
+                if (copyIcon) copyIcon.className = "fa-solid fa-check";
+                copyVenueBtn.classList.add('copied');
+                showToast("Venue address copied to clipboard!");
+                setTimeout(() => {
+                    if (copyText) copyText.textContent = "Copy";
+                    if (copyIcon) copyIcon.className = "fa-regular fa-copy";
+                    copyVenueBtn.classList.remove('copied');
+                }, 2500);
+            }).catch(() => {
+                showToast("The Leela Palace Chennai, MRC Nagar, Chennai 600028");
+            });
+        });
+    }
+
     // ----------------------------------------------------------------------
     // 10. HERO FALLING FLOWER PETALS & GOLD SPARKLES CANVAS
     // ----------------------------------------------------------------------

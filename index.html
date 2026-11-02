@@ -715,49 +715,122 @@
 
         <!-- LOCATION & VENUE SECTION -->
         <section class="location-section" id="location">
+            <!-- Decorative traditional background glow -->
+            <div class="location-bg-glow" aria-hidden="true"></div>
+
             <div class="container">
                 <div class="section-header text-center reveal fade-up">
-                    <div class="section-subtitle-script">Where to find us</div>
+                    <div class="section-subtitle-script">Auspicious Destination</div>
                     <h2 class="section-title">VENUE & LOCATION</h2>
                     <div class="kolam-divider">
                         <span class="dot"></span>
                         <span class="diamond">❖</span>
                         <span class="dot"></span>
                     </div>
+                    <p class="location-subtitle">We cordially invite you to celebrate amidst the sea-facing grandeur and royal Chettinad architecture of The Leela Palace Chennai.</p>
                 </div>
 
                 <div class="location-grid reveal fade-up">
+                    <!-- Venue Details Card -->
                     <div class="venue-info-card">
-                        <div class="venue-badge">WEDDING VENUE</div>
-                        <h3>The Leela Palace Chennai</h3>
-                        <p class="venue-address">
-                            <i class="fa-solid fa-location-dot"></i>
-                            Adyar Seaface, M.R.C. Nagar, Raja Annamalaipuram,<br>
-                            Chennai, Tamil Nadu 600028, India
-                        </p>
-                        
-                        <div class="venue-highlights">
-                            <div class="v-feat">
-                                <i class="fa-solid fa-plane"></i>
-                                <span><strong>Airport:</strong> 15 km from Chennai International Airport (MAA)</span>
+                        <!-- Royal Corner Flourishes -->
+                        <span class="venue-corner top-left" aria-hidden="true"></span>
+                        <span class="venue-corner top-right" aria-hidden="true"></span>
+                        <span class="venue-corner bottom-left" aria-hidden="true"></span>
+                        <span class="venue-corner bottom-right" aria-hidden="true"></span>
+
+                        <div class="venue-card-body">
+                            <div class="venue-badge-group">
+                                <span class="venue-badge primary"><i class="fa-solid fa-crown"></i> 5-STAR SEAFRONT PALACE</span>
+                                <span class="venue-badge secondary"><i class="fa-solid fa-hotel"></i> RAJA ANNAMALAIPURAM</span>
                             </div>
-                            <div class="v-feat">
-                                <i class="fa-solid fa-train"></i>
-                                <span><strong>Railway:</strong> 9 km from Chennai Central Railway Station</span>
+
+                            <h3 class="venue-title">The Leela Palace Chennai</h3>
+                            <div class="venue-subheading">தி லீலா பேலஸ் சென்னை • Adyar Seaface</div>
+
+                            <!-- Address with One-Click Copy -->
+                            <div class="venue-address-card">
+                                <div class="venue-address-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="venue-address-text">
+                                    <span class="street-line">Adyar Seaface, M.R.C. Nagar, Raja Annamalaipuram,</span>
+                                    <span class="city-line">Chennai, Tamil Nadu 600028, India</span>
+                                </div>
+                                <button type="button" class="venue-copy-btn" id="copy-venue-address" title="Copy address to clipboard" aria-label="Copy full venue address">
+                                    <i class="fa-regular fa-copy"></i>
+                                    <span class="copy-text">Copy</span>
+                                </button>
                             </div>
-                            <div class="v-feat">
-                                <i class="fa-solid fa-square-parking"></i>
-                                <span><strong>Valet Parking:</strong> Available inside hotel premises</span>
+
+                            <!-- Palace Celebration Spaces -->
+                            <div class="venue-halls-showcase">
+                                <div class="halls-label"><i class="fa-solid fa-compass"></i> WEDDING CELEBRATION SPACES:</div>
+                                <div class="halls-pills">
+                                    <span class="hall-pill"><i class="fa-solid fa-om"></i> Grand Temple Mandapam</span>
+                                    <span class="hall-pill"><i class="fa-solid fa-champagne-glasses"></i> Seafront Lawns</span>
+                                    <span class="hall-pill"><i class="fa-solid fa-building-columns"></i> Royal Ballroom</span>
+                                    <span class="hall-pill"><i class="fa-solid fa-utensils"></i> Chettinad Dining Hall</span>
+                                </div>
+                            </div>
+
+                            <!-- Transit & Amenities Grid -->
+                            <div class="venue-transit-grid">
+                                <div class="transit-item">
+                                    <div class="transit-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                                    <div class="transit-info">
+                                        <span class="transit-label">AIRPORT (MAA)</span>
+                                        <span class="transit-val">15 km • ~35 mins</span>
+                                        <span class="transit-sub">Chennai Intl Airport</span>
+                                    </div>
+                                </div>
+                                <div class="transit-item">
+                                    <div class="transit-icon"><i class="fa-solid fa-train"></i></div>
+                                    <div class="transit-info">
+                                        <span class="transit-label">CENTRAL RAILWAY</span>
+                                        <span class="transit-val">9 km • ~25 mins</span>
+                                        <span class="transit-sub">MGR Central Station</span>
+                                    </div>
+                                </div>
+                                <div class="transit-item">
+                                    <div class="transit-icon"><i class="fa-solid fa-square-parking"></i></div>
+                                    <div class="transit-info">
+                                        <span class="transit-label">VALET PARKING</span>
+                                        <span class="transit-val">Complimentary</span>
+                                        <span class="transit-sub">Main Portico • Gate 2</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Action Buttons -->
                         <div class="venue-buttons">
-                            <a href="https://maps.google.com/?q=The+Leela+Palace+Chennai" target="_blank" class="btn btn-primary"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
-                            <a href="tel:+914433661234" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Contact Concierge</a>
+                            <a href="https://maps.google.com/?q=The+Leela+Palace+Chennai" target="_blank" rel="noopener" class="btn btn-primary venue-action-btn">
+                                <i class="fa-solid fa-diamond-turn-right"></i> Google Maps
+                            </a>
+                            <a href="https://maps.apple.com/?q=The+Leela+Palace+Chennai" target="_blank" rel="noopener" class="btn btn-secondary venue-action-btn">
+                                <i class="fa-brands fa-apple"></i> Apple Maps
+                            </a>
+                            <a href="tel:+914433661234" class="btn btn-concierge venue-action-btn">
+                                <i class="fa-solid fa-phone"></i> Concierge
+                            </a>
                         </div>
                     </div>
 
+                    <!-- Map Card Wrapper -->
                     <div class="map-card-wrapper">
+                        <!-- Top Navigation Bar -->
+                        <div class="map-topbar">
+                            <div class="map-live-status">
+                                <span class="map-pulse-dot"></span>
+                                <span class="map-status-text">Live Venue Map</span>
+                            </div>
+                            <a href="https://maps.google.com/?q=The+Leela+Palace+Chennai" target="_blank" rel="noopener" class="map-coordinates-link" title="Open in Google Maps">
+                                <i class="fa-solid fa-location-crosshairs"></i> 13.0187° N, 80.2709° E
+                            </a>
+                        </div>
+
+                        <!-- Embedded Google Map -->
                         <div class="map-container">
                             <iframe 
                                 title="Wedding Venue Map - The Leela Palace Chennai" 
@@ -768,6 +841,37 @@
                                 allowfullscreen="" 
                                 loading="lazy">
                             </iframe>
+                        </div>
+
+                        <!-- Nearby Landmarks & Hospitality Footer -->
+                        <div class="map-footer-guide">
+                            <div class="landmarks-header">
+                                <i class="fa-solid fa-route"></i>
+                                <span>Notable Landmarks Nearby:</span>
+                            </div>
+                            <div class="landmarks-grid">
+                                <div class="landmark-tag">
+                                    <i class="fa-solid fa-water"></i>
+                                    <span>Marina Beach <strong>• 4.2 km</strong></span>
+                                </div>
+                                <div class="landmark-tag">
+                                    <i class="fa-solid fa-gopuram"></i>
+                                    <span>Kapaleeshwarar <strong>• 3.4 km</strong></span>
+                                </div>
+                                <div class="landmark-tag">
+                                    <i class="fa-solid fa-church"></i>
+                                    <span>Santhome Basilica <strong>• 2.1 km</strong></span>
+                                </div>
+                                <div class="landmark-tag">
+                                    <i class="fa-solid fa-umbrella-beach"></i>
+                                    <span>Besant Nagar <strong>• 5.0 km</strong></span>
+                                </div>
+                            </div>
+                            
+                            <div class="venue-hospitality-note">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                <span>Traveling from outside Chennai? For airport transfers or guest assistance, please contact the wedding hospitality desk at <a href="tel:+919876543210">+91 98765 43210</a>.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
