@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslesha & Vivek — South Indian Wedding Celebration</title>
+    <meta name="description" content="We invite you to celebrate the traditional South Indian wedding ceremony of Aslesha and Vivek. Join us in Chennai for Muhurtham, Sangeet & Festivities.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="header">
+        <div class="header-container">
+            <a href="#hero" class="brand-logo">
+                <span class="monogram">A & V</span>
+                <span class="brand-sub">Aslesha & Vivek</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#story" class="nav-link"><i class="fa-solid fa-heart"></i> Our Story</a>
+                <a href="#events" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
+                <a href="#colors" class="nav-link"><i class="fa-solid fa-palette"></i> Colors</a>
+                <a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
+                <a href="#location" class="nav-link"><i class="fa-solid fa-location-dot"></i> Venue</a>
+                <a href="#rsvp" class="nav-link btn-nav-rsvp"><i class="fa-solid fa-envelope-open-text"></i> RSVP</a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Audio Player Control -->
+                <button class="audio-btn" id="audio-toggle" aria-label="Toggle festive music" title="Toggle Shehnai / Traditional Music">
+                    <div class="sound-wave" id="sound-wave">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <i class="fa-solid fa-music music-icon"></i>
+                </button>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="mobile-toggle" id="menu-toggle" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay">
+        <button class="close-menu" id="close-menu"><i class="fa-solid fa-xmark"></i></button>
+        <div class="mobile-nav-links">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#story" class="mobile-link">Our Story</a>
+            <a href="#events" class="mobile-link">Wedding Events</a>
+            <a href="#colors" class="mobile-link">Color Palette</a>
+            <a href="#gallery" class="mobile-link">Photo Gallery</a>
+            <a href="#location" class="mobile-link">Location & Venue</a>
+            <a href="#rsvp" class="mobile-link btn-mobile-rsvp">RSVP Now</a>
+            <a href="#wishes" class="mobile-link">Blessings Wall</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="hero-backdrop">
+                <img src="assets/images/hero-bg.jpg" alt="South Indian Wedding Mandapam Stage Setup" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+                <div class="hero-radial-glow" aria-hidden="true"></div>
+                <!-- Interactive Falling Rose & Marigold Petals Canvas -->
+                <canvas id="hero-petals-canvas" class="hero-petals-canvas" aria-hidden="true"></canvas>
+            </div>
+
+            <div class="hero-content reveal fade-up">
+                <!-- Auspicious Sacred Shloka -->
+                <div class="auspicious-invoc">
+                    <span class="sacred-om">ॐ</span>
+                    <span class="sacred-text">॥ श्री गणेशाय नमः ॥</span>
+                    <span class="sacred-om">ॐ</span>
+                </div>
+
+                <!-- Festive Subtitle Badge -->
+                <div class="header-script-badge">
+                    <span class="line left-line"></span>
+                    <span class="badge-text"><i class="fa-solid fa-star"></i> KALYANA MAHOTSAVAM <i class="fa-solid fa-star"></i></span>
+                    <span class="line right-line"></span>
+                </div>
+                <p class="hero-tagline">WE CORDIALLY INVITE YOU TO CELEBRATE OUR WEDDING</p>
+                
+                <div class="hero-card-frame" id="hero-card">
+                    <!-- Ornate Traditional Kolam SVG Corners -->
+                    <div class="kolam-corner top-left">
+                        <svg class="kolam-corner-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 60V18C4 10.27 10.27 4 18 4H60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M12 60V22C12 16.48 16.48 12 22 12H60" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+                            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+                            <circle cx="34" cy="18" r="3" fill="currentColor"/>
+                            <circle cx="18" cy="34" r="3" fill="currentColor"/>
+                            <path d="M8 34C18 34 34 18 34 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="6" cy="60" r="2.5" fill="currentColor"/>
+                            <circle cx="60" cy="6" r="2.5" fill="currentColor"/>
+                            <path d="M4 4L18 18" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="kolam-corner top-right">
+                        <svg class="kolam-corner-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 60V18C4 10.27 10.27 4 18 4H60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M12 60V22C12 16.48 16.48 12 22 12H60" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+                            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+                            <circle cx="34" cy="18" r="3" fill="currentColor"/>
+                            <circle cx="18" cy="34" r="3" fill="currentColor"/>
+                            <path d="M8 34C18 34 34 18 34 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="6" cy="60" r="2.5" fill="currentColor"/>
+                            <circle cx="60" cy="6" r="2.5" fill="currentColor"/>
+                            <path d="M4 4L18 18" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="kolam-corner bottom-left">
+                        <svg class="kolam-corner-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 60V18C4 10.27 10.27 4 18 4H60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M12 60V22C12 16.48 16.48 12 22 12H60" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+                            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+                            <circle cx="34" cy="18" r="3" fill="currentColor"/>
+                            <circle cx="18" cy="34" r="3" fill="currentColor"/>
+                            <path d="M8 34C18 34 34 18 34 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="6" cy="60" r="2.5" fill="currentColor"/>
+                            <circle cx="60" cy="6" r="2.5" fill="currentColor"/>
+                            <path d="M4 4L18 18" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="kolam-corner bottom-right">
+                        <svg class="kolam-corner-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 60V18C4 10.27 10.27 4 18 4H60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M12 60V22C12 16.48 16.48 12 22 12H60" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+                            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+                            <circle cx="34" cy="18" r="3" fill="currentColor"/>
+                            <circle cx="18" cy="34" r="3" fill="currentColor"/>
+                            <path d="M8 34C18 34 34 18 34 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="6" cy="60" r="2.5" fill="currentColor"/>
+                            <circle cx="60" cy="6" r="2.5" fill="currentColor"/>
+                            <path d="M4 4L18 18" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+
+                    <!-- Inner Delicate Gold Border -->
+                    <div class="card-inner-border"></div>
+
+                    <!-- Auspicious Toran Garland Accent -->
+                    <div class="card-toran-header" aria-hidden="true">
+                        <div class="toran-garland">
+                            <span class="leaf-motif">🌿</span>
+                            <span class="flower-dot marigold"></span>
+                            <span class="flower-dot jasmine"></span>
+                            <span class="flower-dot rose"></span>
+                            <div class="toran-center-pendant">
+                                <i class="fa-solid fa-dharmachakra"></i>
+                            </div>
+                            <span class="flower-dot rose"></span>
+                            <span class="flower-dot jasmine"></span>
+                            <span class="flower-dot marigold"></span>
+                            <span class="leaf-motif flip">🌿</span>
+                        </div>
+                    </div>
+
+                    <!-- Couple Portrait Stage with Rotating Celestial Mandala Halo -->
+                    <div class="hero-portrait-stage">
+                        <div class="mandala-halo" aria-hidden="true">
+                            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="200" cy="200" r="190" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="4 6"/>
+                                <circle cx="200" cy="200" r="168" stroke="url(#goldGradient)" stroke-width="1"/>
+                                <circle cx="200" cy="200" r="144" stroke="url(#goldGradient)" stroke-width="1.5" stroke-dasharray="2 4"/>
+                                <g stroke="url(#goldGradient)" stroke-width="1.2" opacity="0.85">
+                                    <path d="M200 10 L200 45 M200 355 L200 390 M10 200 L45 200 M355 200 L390 200"/>
+                                    <path d="M66 66 L91 91 M309 309 L334 334 M66 334 L91 309 M309 91 L334 66"/>
+                                    <path d="M127 25 L138 58 M262 342 L273 375 M25 127 L58 138 M342 262 L375 273"/>
+                                    <path d="M273 25 L262 58 M138 342 L127 375 M375 127 L342 138 M25 262 L58 273"/>
+                                </g>
+                                <g stroke="url(#goldGradient)" stroke-width="1" opacity="0.65">
+                                    <circle cx="200" cy="65" r="14"/>
+                                    <circle cx="200" cy="335" r="14"/>
+                                    <circle cx="65" cy="200" r="14"/>
+                                    <circle cx="335" cy="200" r="14"/>
+                                    <circle cx="105" cy="105" r="14"/>
+                                    <circle cx="295" cy="295" r="14"/>
+                                    <circle cx="105" cy="295" r="14"/>
+                                    <circle cx="295" cy="105" r="14"/>
+                                </g>
+                                <defs>
+                                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#B8860B" stop-opacity="0.8"/>
+                                        <stop offset="50%" stop-color="#FFD700" stop-opacity="1"/>
+                                        <stop offset="100%" stop-color="#B8860B" stop-opacity="0.8"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <!-- Bride & Groom Floating Badges -->
+                        <div class="couple-tag tag-bride">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Bride • Aslesha</span>
+                        </div>
+
+                        <div class="hero-couple-img-wrapper">
+                            <img src="assets/images/hero-couple.jpg" alt="Aslesha & Vivek Traditional South Indian Couple" class="hero-couple-img">
+                            <div class="img-gold-border"></div>
+                            <div class="img-inner-shimmer"></div>
+                        </div>
+
+                        <div class="couple-tag tag-groom">
+                            <i class="fa-solid fa-gem"></i>
+                            <span>Groom • Vivek</span>
+                        </div>
+                    </div>
+
+                    <!-- Auspicious Sacred Garland Knot Divider -->
+                    <div class="sacred-garland-knot" aria-hidden="true">
+                        <span class="garland-chain left"></span>
+                        <div class="knot-center">
+                            <span class="fl-dot marigold"></span>
+                            <span class="fl-dot jasmine"></span>
+                            <i class="fa-solid fa-heart pulse"></i>
+                            <span class="fl-dot jasmine"></span>
+                            <span class="fl-dot marigold"></span>
+                        </div>
+                        <span class="garland-chain right"></span>
+                    </div>
+
+                    <!-- Couple Names with Metallic Gold Foil Finish -->
+                    <h1 class="couple-names">
+                        <span class="name-part">Aslesha</span>
+                        <span class="ampersand-wrap"><span class="ampersand">&</span></span>
+                        <span class="name-part">Vivek</span>
+                    </h1>
+
+                    <p class="parents-line">Together with their families</p>
+                    <p class="wedding-invitation-text">Cordially invite you to celebrate the sacred Muhurtham and joyous union of their hearts</p>
+                    
+                    
+
+                    <!-- Venue Quick Link with Pulse Location Pin -->
+                    <a href="#location" class="venue-city-pill" title="View Venue & Directions">
+                        <span class="pin-wrapper"><i class="fa-solid fa-location-dot venue-pin pulse"></i></span>
+                        <span class="venue-text">The Grand Ballroom • The Leela Palace, MRC Nagar, Chennai</span>
+                        <i class="fa-solid fa-arrow-right venue-arrow"></i>
+                    </a>
+
+                    <!-- Action Buttons -->
+                    <div class="hero-cta-buttons">
+                        <a href="#rsvp" class="btn btn-primary btn-hero-rsvp">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Kindly RSVP</span>
+                            <span class="btn-shimmer"></span>
+                        </a>
+                        <a href="#events" class="btn btn-secondary btn-hero-schedule">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Wedding Schedule</span>
+                        </a>
+                        
+                        <!-- Add to Calendar Dropdown Button -->
+                        <div class="calendar-btn-group" id="calendar-btn-group">
+                            <button type="button" class="btn btn-calendar" id="calendar-dropdown-toggle" aria-expanded="false" title="Save this date to your calendar">
+                                <i class="fa-solid fa-calendar-plus"></i>
+                                <span>Save Date</span>
+                                <i class="fa-solid fa-chevron-down cal-chevron"></i>
+                            </button>
+                            <div class="calendar-menu" id="calendar-menu">
+                                <a href="#" id="cal-google" class="cal-option" target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-google"></i>
+                                    <span>Google Calendar</span>
+                                </a>
+                                <a href="#" id="cal-ics" class="cal-option">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <span>Apple / Outlook (.ics)</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Scroll Down Indicator -->
+                <a href="#countdown" class="scroll-down-indicator" aria-label="Scroll to countdown timer">
+                    <span class="scroll-label">Counting Down To Muhurtham</span>
+                    <div class="scroll-mouse-anim">
+                        <span class="mouse-wheel"></span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down bounce"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN TIMER SECTION -->
+        <section class="countdown-section" id="countdown">
+            <!-- Decorative Festive Toran & Background Watermark Glow -->
+            <div class="countdown-bg-ornament" aria-hidden="true"></div>
+
+            <div class="container text-center reveal fade-up">
+                <!-- Auspicious Sacred Shloka Badge -->
+                <div class="countdown-auspicious-badge">
+                    <span class="badge-om">ॐ</span>
+                    <span class="badge-text">शुभ मुहूर्तम् • SHUBHA MUHURTHAM</span>
+                    <span class="badge-om">ॐ</span>
+                </div>
+
+                <div class="section-subtitle-script">Counting Down Every Sacred Moment</div>
+                <h2 class="section-title">TO OUR SACRED UNION</h2>
+                <div class="kolam-divider">
+                    <span class="kolam-line"></span>
+                    <span class="dot"></span>
+                    <span class="diamond">❖</span>
+                    <span class="dot"></span>
+                    <span class="kolam-line right"></span>
+                </div>
+
+                <p class="countdown-lead-quote">
+                    "As the sacred Agni is prepared and the Shehnai fills the air with melody, our hearts count down to the auspicious Muhurtham."
+                </p>
+
+                <!-- Premium Royal Countdown Grid -->
+                <div class="timer-grid" id="timer">
+                    <div class="timer-card">
+                        <div class="timer-card-inner">
+                            <span class="timer-corner top-left"></span>
+                            <span class="timer-corner top-right"></span>
+                            <div class="timer-number-wrapper">
+                                <span class="timer-number" id="days">000</span>
+                            </div>
+                            <span class="timer-label">DAYS</span>
+                            <span class="timer-sublabel">நாட்கள் • दिवस</span>
+                        </div>
+                    </div>
+
+                    <div class="timer-colon-wrapper" aria-hidden="true">
+                        <span class="colon-dot"></span>
+                        <span class="colon-gem">❖</span>
+                        <span class="colon-dot"></span>
+                    </div>
+
+                    <div class="timer-card">
+                        <div class="timer-card-inner">
+                            <span class="timer-corner top-left"></span>
+                            <span class="timer-corner top-right"></span>
+                            <div class="timer-number-wrapper">
+                                <span class="timer-number" id="hours">00</span>
+                            </div>
+                            <span class="timer-label">HOURS</span>
+                            <span class="timer-sublabel">மணிகள் • घंटे</span>
+                        </div>
+                    </div>
+
+                    <div class="timer-colon-wrapper" aria-hidden="true">
+                        <span class="colon-dot"></span>
+                        <span class="colon-gem">❖</span>
+                        <span class="colon-dot"></span>
+                    </div>
+
+                    <div class="timer-card">
+                        <div class="timer-card-inner">
+                            <span class="timer-corner top-left"></span>
+                            <span class="timer-corner top-right"></span>
+                            <div class="timer-number-wrapper">
+                                <span class="timer-number" id="minutes">00</span>
+                            </div>
+                            <span class="timer-label">MINUTES</span>
+                            <span class="timer-sublabel">நிமிடங்கள் • मिनट</span>
+                        </div>
+                    </div>
+
+                    <div class="timer-colon-wrapper" aria-hidden="true">
+                        <span class="colon-dot"></span>
+                        <span class="colon-gem">❖</span>
+                        <span class="colon-dot"></span>
+                    </div>
+
+                    <div class="timer-card timer-card-seconds">
+                        <div class="timer-card-inner">
+                            <span class="timer-corner top-left"></span>
+                            <span class="timer-corner top-right"></span>
+                            <div class="timer-number-wrapper">
+                                <span class="timer-number" id="seconds">00</span>
+                                <span class="seconds-pulse-beacon" title="Live ticking"></span>
+                            </div>
+                            <span class="timer-label">SECONDS</span>
+                            <span class="timer-sublabel">நொடிகள் • सेकंड</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grand Date, Vedic Panchang & Subha Muhurtham Card with Glowing Brass Diyas -->
+                <div class="wedding-date-card countdown-date-card">
+                    <div class="brass-diya diya-left" aria-hidden="true">
+                        <div class="diya-flame-wrapper">
+                            <span class="flame-glow"></span>
+                            <span class="flame-core"></span>
+                        </div>
+                        <div class="diya-bowl"></div>
+                        <div class="diya-stand"></div>
+                    </div>
+                
+                    <div class="date-card-details">
+                        <div class="date-primary">
+                            <i class="fa-solid fa-calendar-check cal-icon"></i>
+                            <span>SUNDAY, NOVEMBER 22, 2026</span>
+                        </div>
+                        <div class="muhurtham-badge-row">
+                            <span class="muhurtham-dot"></span>
+                            <span class="muhurtham-text">SUBHA MUHURTHAM: 8:45 AM - 10:15 AM (IST)</span>
+                            <span class="muhurtham-dot"></span>
+                        </div>
+                        
+                        <!-- Auspicious Vedic Panchang Badges -->
+                        <div class="panchang-pills-row">
+                            <span class="panchang-pill"><i class="fa-solid fa-star"></i> Rohini Nakshatra</span>
+                            <span class="panchang-divider">•</span>
+                            <span class="panchang-pill"><i class="fa-solid fa-sun"></i> Dhanus Lagnam</span>
+                            <span class="panchang-divider">•</span>
+                            <span class="panchang-pill"><i class="fa-solid fa-ring"></i> Mangalya Dharanam</span>
+                        </div>
+
+                        <!-- Venue Pill Snippet -->
+                        <div class="muhurtham-venue-tag">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>The Grand Ballroom • The Leela Palace, MRC Nagar, Chennai</span>
+                        </div>
+                    </div>
+                
+                    <div class="brass-diya diya-right" aria-hidden="true">
+                        <div class="diya-flame-wrapper">
+                            <span class="flame-glow"></span>
+                            <span class="flame-core"></span>
+                        </div>
+                        <div class="diya-bowl"></div>
+                        <div class="diya-stand"></div>
+                    </div>
+                </div>
+
+                <!-- Festive Action & Reminder Buttons -->
+                <div class="countdown-action-buttons">
+                    <a href="#events" class="countdown-btn countdown-btn-primary">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Explore Wedding Schedule</span>
+                    </a>
+                    
+                    <div class="countdown-cal-dropdown" id="countdown-cal-dropdown">
+                        <button type="button" class="countdown-btn countdown-btn-secondary" id="countdown-cal-toggle" aria-expanded="false" title="Save this Muhurtham to your calendar">
+                            <i class="fa-solid fa-bell"></i>
+                            <span>Set Calendar Reminder</span>
+                            <i class="fa-solid fa-chevron-down btn-arrow"></i>
+                        </button>
+                        <div class="countdown-cal-menu" id="countdown-cal-menu">
+                            <a href="#" id="countdown-cal-google" class="countdown-cal-item" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-google"></i>
+                                <span>Google Calendar</span>
+                            </a>
+                            <a href="#" id="countdown-cal-ics" class="countdown-cal-item">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span>Apple / Outlook (.ics)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#rsvp" class="countdown-btn countdown-btn-outline">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <span>RSVP Now</span>
+                    </a>
+                </div>
+
+                <p class="countdown-footer-text">
+                    <i class="fa-solid fa-heart heart-beat"></i> We seek your loving presence and blessings on our sacred day! <i class="fa-solid fa-heart heart-beat"></i>
+                </p>
+            </div>
+        </section>
+
+        <!-- OUR STORY SECTION -->
+        <section class="story-section" id="story">
+            <div class="container">
+                <div class="section-header text-center reveal fade-up">
+                    <div class="section-subtitle-script">Our Journey</div>
+                    <h2 class="section-title">OUR STORY</h2>
+                    <div class="kolam-divider">
+                        <span class="dot"></span>
+                        <span class="diamond">❖</span>
+                        <span class="dot"></span>
+                    </div>
+                    <p class="story-quote">"Two hearts, two lives, one love story. We met, we loved, and now we're getting married!"</p>
+                </div>
+
+                <div class="story-grid">
+                    <div class="story-card reveal slide-right">
+                        <div class="story-img-frame">
+                            <img src="assets/images/story-first-meet.jpg" alt="How Aslesha and Vivek Met over filter coffee">
+                            <div class="story-date-tag">FIRST MEETING</div>
+                        </div>
+                        <div class="story-content">
+                            <h3>When Paths Crossed</h3>
+                            <p class="story-period">Winter 2022 • Chennai</p>
+                            <p>It started with a chance encounter over traditional filter coffee in Chennai. A conversation that was supposed to last twenty minutes turned into hours of shared laughter, family values, and endless discussions on music, food, and dreams.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card reveal slide-left">
+                        <div class="story-img-frame">
+                            <img src="assets/images/story-proposal.jpg" alt="The Sunset Beach Proposal Moment">
+                            <div class="story-date-tag">THE PROPOSAL</div>
+                        </div>
+                        <div class="story-content">
+                            <h3>A Sacred Beginning</h3>
+                            <p class="story-period">Monsoon 2025 • Mahabalipuram</p>
+                            <p>Against the breathtaking backdrop of ancient Shore Temple sunset waves, Vivek asked Aslesha to spend a lifetime together. With tears of joy and blessings from elders, two families embraced as one united bond.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEDDING EVENTS SCHEDULE SECTION -->
+        <section class="events-section" id="events">
+            <div class="container">
+                <div class="section-header text-center reveal fade-up">
+                    <div class="section-subtitle-script">Celebration Timeline</div>
+                    <h2 class="section-title">OUR WEDDING DAY & EVENTS</h2>
+                    <div class="kolam-divider">
+                        <span class="dot"></span>
+                        <span class="diamond">❖</span>
+                        <span class="dot"></span>
+                    </div>
+                    <p class="events-subtitle">Join us for two days filled with sacred rituals, music, joy, and grand South Indian Sadhya feast.</p>
+                </div>
+
+                <div class="timeline-container">
+
+                    <!-- Event 1 -->
+                    <div class="timeline-card reveal slide-right">
+                        <div class="event-time-badge">
+                            <span class="event-date">SAT, NOV 21</span>
+                            <span class="event-hour">4:30 PM</span>
+                        </div>
+                        <div class="event-icon-box">
+                            <i class="fa-solid fa-ring"></i>
+                        </div>
+                        <div class="event-details">
+                            <h3>Nichayathartham & Vrutham</h3>
+                            <p class="event-type">Traditional Engagement & Ancestral Blessings</p>
+                            <p class="event-location"><i class="fa-solid fa-location-dot"></i> Royal Ballroom, The Leela Palace, Chennai</p>
+                            <p class="event-desc">The formal exchange of wedding rings and coconut plates, followed by Vedic chants and ancestral rituals invoking happiness for the couple.</p>
+                            <div class="event-actions">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nichayathartham+-+Aslesha+%26+Vivek&dates=20261121T110000Z/20261121T140000Z&details=Engagement+and+blessings&location=The+Leela+Palace+Chennai" target="_blank" class="btn-cal"><i class="fa-regular fa-calendar-plus"></i> Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="timeline-card reveal slide-left">
+                        <div class="event-time-badge">
+                            <span class="event-date">SAT, NOV 21</span>
+                            <span class="event-hour">7:00 PM</span>
+                        </div>
+                        <div class="event-icon-box">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <div class="event-details">
+                            <h3>Sangeet & Henna Evening</h3>
+                            <p class="event-type">Cocktails, Mehendi & Dance Celebration</p>
+                            <p class="event-location"><i class="fa-solid fa-location-dot"></i> Seafront Lawns, The Leela Palace, Chennai</p>
+                            <p class="event-desc">An evening of energetic dances, live classical fusion music, Mehendi stations, and delicious South & North Indian live food counters.</p>
+                            <div class="event-actions">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sangeet+-+Aslesha+%26+Vivek&dates=20261121T133000Z/20261121T173000Z&details=Sangeet+and+Cocktail+Night&location=The+Leela+Palace+Chennai" target="_blank" class="btn-cal"><i class="fa-regular fa-calendar-plus"></i> Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="timeline-card highlight-event reveal slide-right">
+                        <div class="event-time-badge muhurtham-badge">
+                            <span class="event-date">SUN, NOV 22</span>
+                            <span class="event-hour">8:45 AM - 10:15 AM</span>
+                        </div>
+                        <div class="event-icon-box">
+                            <i class="fa-solid fa-om"></i>
+                        </div>
+                        <div class="event-details">
+                            <div class="auspicious-tag"><i class="fa-solid fa-star"></i> Sacred Muhurtham</div>
+                            <h3>Auspicious Kalyana Muhurtham</h3>
+                            <p class="event-type">Kanyadaan & Mangalya Dharanam (Tying the Thali)</p>
+                            <p class="event-location"><i class="fa-solid fa-location-dot"></i> Grand Temple Mandapam, The Leela Palace</p>
+                            <p class="event-desc">The sacred tying of the Thirumangalyam accompanied by auspicious Nadaswaram notes, showering of Akshatai (blessed yellow rice), and Saptapadi around the sacred Agni fire.</p>
+                            <div class="event-actions">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Kalyana+Muhurtham+-+Aslesha+%26+Vivek&dates=20261122T031500Z/20261122T051500Z&details=Auspicious+Muhurtham+Ceremony&location=The+Leela+Palace+Chennai" target="_blank" class="btn-cal"><i class="fa-regular fa-calendar-plus"></i> Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="timeline-card reveal slide-left">
+                        <div class="event-time-badge">
+                            <span class="event-date">SUN, NOV 22</span>
+                            <span class="event-hour">12:30 PM</span>
+                        </div>
+                        <div class="event-icon-box">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <div class="event-details">
+                            <h3>Kalyana Sadhya & Reception Banquet</h3>
+                            <p class="event-type">Traditional Banana Leaf Grand Feast</p>
+                            <p class="event-location"><i class="fa-solid fa-location-dot"></i> Grand Dining Hall & Banquets</p>
+                            <p class="event-desc">A lavish 21-item authentic South Indian banana leaf Sadhya feast featuring Payasam, Aviyal, Vadai, Bisi Bele Bath, and traditional sweets.</p>
+                            <div class="event-actions">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Sadhya+Banquet+-+Aslesha+%26+Vivek&dates=20261122T070000Z/20261122T100000Z&details=Traditional+Sadhya+Banquet&location=The+Leela+Palace+Chennai" target="_blank" class="btn-cal"><i class="fa-regular fa-calendar-plus"></i> Add to Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTO GALLERY SECTION WITH LIGHTBOX -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-header text-center reveal fade-up">
+                    <div class="section-subtitle-script">Memories</div>
+                    <h2 class="section-title">PHOTO GALLERY</h2>
+                    <div class="kolam-divider">
+                        <span class="dot"></span>
+                        <span class="diamond">❖</span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <!-- Gallery Category Filters -->
+                <div class="gallery-filters reveal fade-up">
+                    <button class="filter-btn active" data-filter="all">All Photos</button>
+                    <button class="filter-btn" data-filter="prewedding">Pre-Wedding</button>
+                    <button class="filter-btn" data-filter="rituals">Sacred Rituals</button>
+                    <button class="filter-btn" data-filter="moments">Candid Moments</button>
+                </div>
+
+                <!-- Gallery Grid with Generated South Indian Images -->
+                <div class="gallery-grid reveal fade-up">
+                    <div class="gallery-item" data-category="rituals">
+                        <img src="assets/images/hero-couple.jpg" alt="Traditional South Indian Bride and Groom in Mandapam">
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Traditional Muhurtham Couple</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="rituals">
+                        <img src="assets/images/gallery-garlands.jpg" alt="Rose and Jasmine Garlands Exchange Ritual">
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Maalai Exchange Ritual</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="moments">
+                        <img src="assets/images/story-first-meet.jpg" alt="South Indian Filter Coffee Moment">
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Filter Coffee Conversations</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="rituals">
+                        <img src="assets/images/gallery-lamp.jpg" alt="Glowing Kuthuvillakku Brass Lamp">
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Kuthuvillakku & Diya Decor</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="prewedding">
+                        <img src="assets/images/story-proposal.jpg" alt="Sunset Shore Temple Beach Proposal">
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Shore Temple Sunset Proposal</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="moments">
+                        <img src="assets/images/gallery-sadhya.jpg" alt="Authentic South Indian Kalyana Sadhya Banana Leaf Feast">
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            <span>Traditional Banana Leaf Sadhya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL -->
+        <div class="lightbox-modal" id="lightbox">
+            <button class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+            <button class="lightbox-nav prev" id="lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightbox-img">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+            <button class="lightbox-nav next" id="lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <!-- LOCATION & VENUE SECTION -->
+        <section class="location-section" id="location">
+            <div class="container">
+                <div class="section-header text-center reveal fade-up">
+                    <div class="section-subtitle-script">Where to find us</div>
+                    <h2 class="section-title">VENUE & LOCATION</h2>
+                    <div class="kolam-divider">
+                        <span class="dot"></span>
+                        <span class="diamond">❖</span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="location-grid reveal fade-up">
+                    <div class="venue-info-card">
+                        <div class="venue-badge">WEDDING VENUE</div>
+                        <h3>The Leela Palace Chennai</h3>
+                        <p class="venue-address">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Adyar Seaface, M.R.C. Nagar, Raja Annamalaipuram,<br>
+                            Chennai, Tamil Nadu 600028, India
+                        </p>
+                        
+                        <div class="venue-highlights">
+                            <div class="v-feat">
+                                <i class="fa-solid fa-plane"></i>
+                                <span><strong>Airport:</strong> 15 km from Chennai International Airport (MAA)</span>
+                            </div>
+                            <div class="v-feat">
+                                <i class="fa-solid fa-train"></i>
+                                <span><strong>Railway:</strong> 9 km from Chennai Central Railway Station</span>
+                            </div>
+                            <div class="v-feat">
+                                <i class="fa-solid fa-square-parking"></i>
+                                <span><strong>Valet Parking:</strong> Available inside hotel premises</span>
+                            </div>
+                        </div>
+
+                        <div class="venue-buttons">
+                            <a href="https://maps.google.com/?q=The+Leela+Palace+Chennai" target="_blank" class="btn btn-primary"><i class="fa-solid fa-diamond-turn-right"></i> Get Directions</a>
+                            <a href="tel:+914433661234" class="btn btn-secondary"><i class="fa-solid fa-phone"></i> Contact Concierge</a>
+                        </div>
+                    </div>
+
+                    <div class="map-card-wrapper">
+                        <div class="map-container">
+                            <iframe 
+                                title="Wedding Venue Map - The Leela Palace Chennai" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.266299105406!2d80.27090887588383!3d13.018742813840742!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d8f37084bd%3A0xa61838cf40d99540!2sThe%20Leela%20Palace%20Chennai!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="380" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP FORM SECTION (MATCHING TEMPLATE) -->
+        <section class="rsvp-section" id="rsvp">
+            <div class="container">
+                <div class="rsvp-card-container reveal fade-up">
+                    <div class="rsvp-header text-center">
+                        <div class="section-subtitle-script">Please</div>
+                        <h2 class="rsvp-main-title">RSVP</h2>
+                        <div class="by-date-badge">BY OCTOBER 31, 2026</div>
+                        <p class="rsvp-intro-text">KINDLY CONFIRM YOUR PRESENCE BY FILLING OUT THE FORM BELOW.</p>
+                    </div>
+
+                    <form class="rsvp-form" id="wedding-rsvp-form">
+                        <div class="form-group">
+                            <label for="fullName">FULL NAME <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailAddress">EMAIL ADDRESS <span class="required">*</span></label>
+                            <input type="email" id="emailAddress" name="emailAddress" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>WILL YOU ATTEND? <span class="required">*</span></label>
+                            <div class="radio-options">
+                                <label class="radio-card">
+                                    <input type="radio" name="attendance" value="Yes" checked>
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Yes, can't wait!</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="attendance" value="No">
+                                    <span class="radio-custom"></span>
+                                    <span class="radio-label">Sorry, can't make it</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-half">
+                                <label for="guestCount">NUMBER OF GUESTS</label>
+                                <select id="guestCount" name="guestCount">
+                                    <option value="1">1 Person</option>
+                                    <option value="2" selected>2 Persons</option>
+                                    <option value="3">3 Persons</option>
+                                    <option value="4+">4+ Family Members</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-half">
+                                <label for="dietary">DIETARY PREFERENCE</label>
+                                <select id="dietary" name="dietary">
+                                    <option value="Traditional Sadhya (Pure Veg)">Traditional Banana Leaf Sadhya (Veg)</option>
+                                    <option value="Jain Vegetarian">Jain Vegetarian</option>
+                                    <option value="Non-Vegetarian">Non-Vegetarian (Sangeet Night)</option>
+                                    <option value="Vegan / Allergies">Vegan / Special Allergies</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>EVENTS YOU WILL ATTEND</label>
+                            <div class="checkbox-options">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="attendingEvents" value="Engagement" checked>
+                                    <span class="checkbox-custom"></span>
+                                    <span>Engagement (Nov 21)</span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="attendingEvents" value="Sangeet" checked>
+                                    <span class="checkbox-custom"></span>
+                                    <span>Sangeet Night (Nov 21)</span>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="attendingEvents" value="Muhurtham" checked>
+                                    <span class="checkbox-custom"></span>
+                                    <span>Muhurtham & Sadhya (Nov 22)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="songBlessing">A SONG THAT WILL GET YOU DANCING / BLESSINGS</label>
+                            <input type="text" id="songBlessing" name="songBlessing" placeholder="Your favorite song or a warm note for the couple">
+                        </div>
+
+                        <button type="submit" class="btn btn-rsvp-submit" id="rsvp-submit-btn">
+                            <span>SUBMIT RSVP</span>
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </form>
+
+                    <div class="rsvp-thankyou-box" id="rsvp-thankyou">
+                        <i class="fa-solid fa-circle-check thankyou-icon"></i>
+                        <h3>THANK YOU!</h3>
+                        <p>We look forward to celebrating with you.</p>
+                        <div class="submitted-details" id="submitted-details-summary"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WISHES & BLESSINGS WALL -->
+        <section class="wishes-section" id="wishes">
+            <div class="container">
+                <div class="section-header text-center reveal fade-up">
+                    <div class="section-subtitle-script">Shower Your Love</div>
+                    <h2 class="section-title">GUEST BLESSINGS WALL</h2>
+                    <div class="kolam-divider">
+                        <span class="dot"></span>
+                        <span class="diamond">❖</span>
+                        <span class="dot"></span>
+                    </div>
+                    <p class="wishes-intro">Leave your heartfelt wishes for Aslesha & Vivek as they embark on this sacred journey.</p>
+                </div>
+
+                <div class="wishes-grid reveal fade-up">
+                    <!-- Wish Input Card -->
+                    <div class="add-wish-card">
+                        <h3><i class="fa-solid fa-pen-nib"></i> Leave a Blessing</h3>
+                        <form id="wish-form">
+                            <div class="form-group">
+                                <input type="text" id="wishAuthor" placeholder="Your Name & Relationship" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="wishText" rows="4" placeholder="Write your warm wishes for the couple..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Post Blessing</button>
+                        </form>
+                    </div>
+
+                    <!-- Wishes Container -->
+                    <div class="wishes-list" id="wishes-container">
+                        <!-- Default blessings loaded dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FLOATING FEATURE BADGES TOOLBAR (MATCHING TEMPLATE BOTTOM BAR) -->
+    <div class="template-features-bar">
+        <div class="tf-item">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>MOBILE FRIENDLY</span>
+        </div>
+        <div class="tf-divider"></div>
+        <div class="tf-item">
+            <i class="fa-solid fa-link"></i>
+            <span>ONE LINK EVERYTHING</span>
+        </div>
+        <div class="tf-divider"></div>
+        <div class="tf-item">
+            <i class="fa-solid fa-users"></i>
+            <span>SHARE WITH EVERYONE</span>
+        </div>
+        <div class="tf-divider"></div>
+        <div class="tf-item">
+            <i class="fa-solid fa-heart"></i>
+            <span>BE PART OF OUR JOURNEY</span>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <div class="footer-monogram">A & V</div>
+            <h2 class="footer-title">Aslesha & Vivek</h2>
+            <p class="footer-quote">"Together with our families, we await the joy of your presence."</p>
+
+            <div class="footer-share-links">
+                <button class="share-btn" id="share-whatsapp" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                <button class="share-btn" id="share-copy" title="Copy Website Link"><i class="fa-solid fa-copy"></i></button>
+                <button class="share-btn" id="share-email" title="Share via Email"><i class="fa-solid fa-envelope"></i></button>
+            </div>
+
+            <p class="copyright">© 2026 Aslesha & Vivek Wedding. Crafted with ❤️ & Tradition.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Popup -->
+    <div class="toast-notification" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">Link copied to clipboard!</span>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
