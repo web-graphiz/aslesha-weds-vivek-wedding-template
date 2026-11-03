@@ -48,6 +48,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -56,7 +58,10 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography Utilities */
@@ -209,24 +214,92 @@ a {
 }
 
 .brand-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.monogram {
+.brand-crest {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(122, 28, 28, 0.22);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.crest-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s ease;
+}
+
+.brand-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.15;
+}
+
+.brand-names {
     font-family: var(--font-serif);
-    font-size: 1.6rem;
+    font-size: 1.32rem;
     font-weight: 700;
     color: var(--maroon-primary);
-    letter-spacing: 2px;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.brand-amp {
+    font-family: var(--font-script);
+    font-size: 1.25rem;
+    color: var(--gold-primary);
+    font-weight: 400;
+    margin: 0 2px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .brand-sub {
-    font-family: var(--font-script);
-    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 3px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.brand-sub .sub-diamond {
+    font-size: 0.48rem;
     color: var(--gold-primary);
-    margin-top: -6px;
+    opacity: 0.85;
+}
+
+/* Hover & Interactive States */
+.brand-logo:hover .brand-crest {
+    transform: scale(1.08) rotate(4deg);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+}
+
+.brand-logo:hover .crest-svg {
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
+}
+
+.brand-logo:hover .brand-names {
+    color: var(--maroon-dark);
 }
 
 .nav-menu {
@@ -1822,98 +1895,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   7. COLOR PALETTE / DRESS CODE SECTION
-   -------------------------------------------------------------------------- */
-.colors-section {
-    padding: 80px 20px;
-    background-color: var(--cream-bg);
-}
-
-.colors-intro {
-    max-width: 600px;
-    margin: 0 auto 36px auto;
-}
-
-.swatches-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 48px;
-}
-
-.swatch-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    width: 120px;
-    transition: var(--transition);
-}
-
-.swatch-card:hover {
-    transform: translateY(-6px);
-}
-
-.swatch-circle {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: var(--swatch-color);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    border: 3px solid #FFFFFF;
-    outline: 1px solid var(--border-gold);
-}
-
-.swatch-name {
-    font-family: var(--font-serif);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--maroon-primary);
-}
-
-.swatch-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
-.attire-tips-box {
-    background: #FFFFFF;
-    border: 1px solid var(--border-gold);
-    border-radius: var(--radius-md);
-    padding: 32px;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    box-shadow: var(--shadow-soft);
-}
-
-.tip-col {
-    flex: 1;
-    text-align: left;
-}
-
-.tip-col h4 {
-    font-size: 1.2rem;
-    color: var(--maroon-primary);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.tip-divider {
-    width: 1px;
-    height: 80px;
-    background-color: var(--border-gold);
-}
-
-/* --------------------------------------------------------------------------
-   8. WEDDING EVENTS SCHEDULE SECTION
+   7. WEDDING EVENTS SCHEDULE SECTION
    -------------------------------------------------------------------------- */
 .events-section {
     padding: 80px 20px;
@@ -2048,7 +2030,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   9. PHOTO GALLERY & LIGHTBOX
+   8. PHOTO GALLERY & LIGHTBOX
    -------------------------------------------------------------------------- */
 .gallery-section {
     padding: 80px 20px;
@@ -2219,7 +2201,7 @@ a {
 .lightbox-nav.next { right: 30px; }
 
 /* --------------------------------------------------------------------------
-   10. LOCATION & VENUE SECTION
+   9. LOCATION & VENUE SECTION
    -------------------------------------------------------------------------- */
 .location-section {
     padding: 95px 20px;
@@ -2755,7 +2737,7 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   11. RSVP FORM SECTION (MATCHING TEMPLATE DESIGN)
+   10. RSVP FORM SECTION (MATCHING TEMPLATE DESIGN)
    -------------------------------------------------------------------------- */
 .rsvp-section {
     padding: 90px 20px;
@@ -2956,87 +2938,527 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   12. BLESSINGS / WISHES WALL SECTION
+   11. BLESSINGS / WISHES WALL SECTION
    -------------------------------------------------------------------------- */
 .wishes-section {
-    padding: 80px 20px;
-    background: #FFFFFF;
+    padding: 85px 20px 95px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF6EE 45%, #FFFFFF 100%);
+    position: relative;
+    border-top: 1px solid var(--border-gold);
+    border-bottom: 1px solid var(--border-gold);
 }
 
 .wishes-intro {
-    max-width: 600px;
-    margin: 0 auto 36px auto;
+    max-width: 680px;
+    margin: 0 auto 24px auto;
+    font-size: 1.05rem;
+    color: var(--text-muted);
 }
 
-.wishes-grid {
+/* Action Bar: Count Badge & Share Blessings Button */
+.wishes-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 24px auto 44px auto;
+}
+
+.wishes-count-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-gold);
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--maroon-primary);
+    box-shadow: 0 4px 16px rgba(122, 28, 28, 0.06);
+}
+
+.wishes-count-pill i {
+    color: var(--gold-primary);
+    font-size: 1.1rem;
+}
+
+.btn-share-blessing {
+    padding: 13px 32px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #7A1C1C 0%, #A02828 50%, #681111 100%);
+    color: #FFFFFF;
+    border: 1.5px solid var(--gold-primary);
+    box-shadow: 0 8px 24px rgba(122, 28, 28, 0.28), 0 0 16px rgba(212, 175, 55, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-share-blessing:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #9B2C2C 0%, #7A1C1C 100%);
+    box-shadow: 0 12px 30px rgba(122, 28, 28, 0.38), 0 0 24px rgba(212, 175, 55, 0.38);
+}
+
+.btn-share-blessing i {
+    font-size: 1rem;
+    color: var(--gold-light);
+}
+
+/* Complete Wishes Wall Grid: Shows ALL blessings */
+.wishes-wall-grid {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 26px;
+    align-items: stretch;
 }
 
-.add-wish-card {
-    background: var(--cream-card);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--radius-md);
-    padding: 24px;
-    box-shadow: var(--shadow-soft);
-}
-
-.add-wish-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 16px;
-}
-
-.btn-block {
-    width: 100%;
-}
-
-.wishes-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
-    max-height: 480px;
-    overflow-y: auto;
-    padding-right: 8px;
-}
-
-.wish-item {
-    background: var(--cream-card);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--radius-md);
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+/* Individual Blessing Card */
+.wish-card {
+    background: #FFFFFF;
+    border: 1.5px solid rgba(212, 175, 55, 0.38);
+    border-radius: 18px;
+    padding: 26px 24px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
+    box-shadow: 0 8px 24px rgba(44, 24, 16, 0.05);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
 }
 
-.wish-item::before {
+.wish-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.5px;
+    background: linear-gradient(90deg, var(--gold-primary), var(--maroon-primary), var(--gold-primary));
+}
+
+.wish-card::after {
     content: '“';
     font-family: var(--font-serif);
-    font-size: 3rem;
+    font-size: 5rem;
+    line-height: 1;
     color: var(--gold-primary);
-    opacity: 0.3;
+    opacity: 0.12;
     position: absolute;
     top: 6px;
-    right: 14px;
+    right: 18px;
+    pointer-events: none;
 }
 
-.wish-text {
-    font-size: 0.9rem;
-    color: var(--text-main);
-    font-style: italic;
-    margin-bottom: 12px;
+.wish-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 16px 36px rgba(122, 28, 28, 0.12), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Newly added blessing highlight */
+.wish-card.just-added {
+    animation: highlightBlessing 2.6s ease-out;
+}
+
+@keyframes highlightBlessing {
+    0% {
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.9), 0 12px 36px rgba(122, 28, 28, 0.3);
+        transform: translateY(-8px) scale(1.02);
+    }
+    100% {
+        box-shadow: 0 8px 24px rgba(44, 24, 16, 0.05);
+        transform: translateY(0) scale(1);
+    }
+}
+
+.wish-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.wish-avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-dark));
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: 1.5px solid var(--gold-primary);
+    box-shadow: 0 4px 10px rgba(122, 28, 28, 0.2);
+    text-transform: uppercase;
+}
+
+.wish-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
 }
 
 .wish-author {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--maroon-primary);
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+.wish-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: #FAF5EA;
+    color: #8A5200;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    align-self: flex-start;
+}
+
+.wish-text {
+    font-size: 0.96rem;
+    line-height: 1.68;
+    color: #38241C;
+    font-style: italic;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+    word-break: break-word;
+}
+
+.wish-card-footer {
+    border-top: 1px dashed rgba(212, 175, 55, 0.35);
+    padding-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
 }
 
 .wish-time {
-    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
     color: var(--text-muted);
+}
+
+.wish-time i {
+    font-size: 0.72rem;
+    opacity: 0.75;
+}
+
+.wish-like-btn {
+    background: #FAF7F2;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--maroon-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.wish-like-btn:hover {
+    background: #FDE8E8;
+    border-color: var(--rose-accent);
+    transform: scale(1.06);
+}
+
+.wish-like-btn.liked {
+    background: #FCE8E8;
+    border-color: #E05252;
+    color: #C02020;
+}
+
+.wish-like-btn.liked i {
+    color: #E02424;
+    animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   12. BLESSING SUBMISSION MODAL
+   -------------------------------------------------------------------------- */
+.blessing-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.blessing-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blessing-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 12, 8, 0.76);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.blessing-modal-dialog {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    background: #FFFDF9;
+    border: 2px solid var(--gold-primary);
+    border-radius: 22px;
+    padding: 38px 34px 32px;
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.45), 0 0 35px rgba(212, 175, 55, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.blessing-modal.active .blessing-modal-dialog {
+    transform: scale(1) translateY(0);
+}
+
+.blessing-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #FAF5EA;
+    border: 1px solid var(--border-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: var(--maroon-primary);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.blessing-modal-close:hover {
+    background: var(--maroon-primary);
+    color: #FFFFFF;
+    transform: rotate(90deg);
+}
+
+.blessing-modal-symbol {
+    font-size: 2.2rem;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+}
+
+.blessing-modal-title {
+    font-family: var(--font-serif);
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--maroon-primary);
+    margin-bottom: 6px;
+}
+
+.blessing-modal-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 22px auto;
+}
+
+.blessing-modal-form .form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.blessing-modal-form label {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--maroon-primary);
+    margin-bottom: 7px;
+}
+
+.blessing-modal-form label i {
+    color: var(--gold-primary);
+    margin-right: 6px;
+}
+
+.blessing-modal-form input[type="text"],
+.blessing-modal-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(212, 175, 55, 0.45);
+    border-radius: 10px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.blessing-modal-form input[type="text"]:focus,
+.blessing-modal-form textarea:focus {
+    outline: none;
+    border-color: var(--maroon-primary);
+    box-shadow: 0 0 0 3px rgba(122, 28, 28, 0.12);
+}
+
+/* Quick inspiration chips */
+.quick-chips-group {
+    margin-bottom: 16px;
+}
+
+.quick-chips-title {
+    font-size: 0.78rem !important;
+    color: var(--text-muted) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    margin-bottom: 8px !important;
+}
+
+.quick-blessings-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.blessing-chip {
+    background: #FAF5EA;
+    border: 1px dashed rgba(212, 175, 55, 0.7);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--maroon-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.blessing-chip:hover {
+    background: var(--maroon-primary);
+    color: #FFFFFF;
+    border-color: var(--maroon-primary);
+    transform: translateY(-1px);
+}
+
+/* Badge Radio Picker */
+.blessing-badge-picker {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.badge-option {
+    cursor: pointer;
+    margin-bottom: 0 !important;
+}
+
+.badge-option input[type="radio"] {
+    display: none;
+}
+
+.badge-option span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.badge-option input[type="radio"]:checked + span {
+    background: #FAF5EA;
+    border-color: var(--maroon-primary);
+    color: var(--maroon-primary);
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(122, 28, 28, 0.12);
+}
+
+.badge-option span i {
+    color: var(--gold-primary);
+    font-size: 0.95rem;
+}
+
+.btn-blessing-submit {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .blessing-modal-dialog {
+        padding: 28px 20px 24px;
+        border-radius: 18px;
+    }
+    .blessing-badge-picker {
+        grid-template-columns: 1fr;
+    }
+    .wishes-wall-grid {
+        grid-template-columns: 1fr;
+    }
+    .wishes-action-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .wishes-count-pill,
+    .btn-share-blessing {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -3139,7 +3561,7 @@ a {
 /* Toast */
 .toast-notification {
     position: fixed;
-    bottom: 30px;
+    bottom: 90px;
     right: 30px;
     background: var(--maroon-primary);
     color: #FFFFFF;
@@ -3159,6 +3581,70 @@ a {
 .toast-notification.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Back to Top Floating Arrow Button
+   -------------------------------------------------------------------------- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+    color: var(--gold-primary);
+    border: 2px solid var(--gold-primary);
+    box-shadow: 0 6px 20px rgba(78, 13, 13, 0.35), 0 0 12px rgba(212, 175, 55, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    cursor: pointer;
+    z-index: 450;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.85);
+    transition: opacity 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                visibility 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                color 0.3s ease;
+    outline: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+    background: var(--gold-metallic);
+    color: var(--maroon-dark);
+    border-color: #FFD700;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 28px rgba(78, 13, 13, 0.45), 0 0 18px rgba(212, 175, 55, 0.6);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.back-to-top i {
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover i {
+    transform: translateY(-3px);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 3px;
 }
 
 /* --------------------------------------------------------------------------
@@ -3186,22 +3672,51 @@ a {
     transform: translate(0, 0);
 }
 
-/* Responsive Rules */
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS & MOBILE OPTIMIZATIONS
+   ========================================================================== */
+
+/* --- TABLET / SMALL DESKTOP (<= 992px) --- */
 @media (max-width: 992px) {
     .nav-menu { display: none; }
     .mobile-toggle { display: block; }
-    .location-grid { grid-template-columns: 1fr; }
-    .wishes-grid { grid-template-columns: 1fr; }
-    .attire-tips-box { flex-direction: column; text-align: center; }
-    .tip-col { text-align: center; }
-    .tip-divider { width: 100%; height: 1px; }
+    .location-grid { grid-template-columns: 1fr; gap: 30px; }
+    .wishes-wall-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .story-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 }
 
+/* --- TABLET & MOBILE DEVICES (<= 768px) --- */
 @media (max-width: 768px) {
+    /* Base Container & Typography */
+    .container { padding: 0 16px; }
+    
+    .section-title {
+        font-size: 1.85rem;
+        letter-spacing: 2px;
+    }
+    .section-subtitle-script {
+        font-size: 2.1rem;
+        margin-bottom: -6px;
+    }
+    
+    /* Hero Section Responsive */
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+        padding: clamp(20px, 3vh, 32px) 14px clamp(24px, 3.5vh, 40px);
+    }
+    .hero-card-frame {
+        padding: clamp(18px, 2.4vh, 28px) 18px clamp(14px, 2vh, 22px) 18px;
+    }
     .couple-names { font-size: clamp(1.8rem, 3.4vh, 2.3rem); }
     .couple-names .ampersand { font-size: clamp(1.6rem, 3.2vh, 2.1rem); margin: 0 4px; }
-    .hero-card-frame { padding: clamp(16px, 2vh, 28px) 16px clamp(12px, 1.6vh, 20px) 16px; }
-    .hero-couple-img-wrapper { width: clamp(130px, 16.5vh, 175px); height: clamp(170px, 21.5vh, 230px); border-radius: 90px 90px 18px 18px; }
+    .hero-couple-img-wrapper {
+        width: clamp(130px, 16.5vh, 175px);
+        height: clamp(170px, 21.5vh, 230px);
+        border-radius: 90px 90px 18px 18px;
+    }
     .mandala-halo { width: clamp(180px, 23vh, 250px); height: clamp(180px, 23vh, 250px); }
     .kolam-corner { width: 32px; height: 32px; }
     .couple-tag { font-size: 0.7rem; padding: 4px 8px; }
@@ -3211,9 +3726,7 @@ a {
     .date-primary { font-size: 0.82rem; letter-spacing: 1px; }
     .muhurtham-badge-row { font-size: 0.7rem; letter-spacing: 0.8px; }
     .venue-city-pill { font-size: 0.76rem; padding: 5px 12px; margin-bottom: clamp(8px, 1.2vh, 14px); }
-    .timeline-card { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-    .event-time-badge { width: 100%; }
-    
+
     /* Countdown Responsive - Tablet */
     .countdown-section { padding: 65px 16px 55px 16px; }
     .countdown-section .section-title { font-size: 1.85rem; letter-spacing: 2.2px; }
@@ -3234,89 +3747,544 @@ a {
     .panchang-pill { font-size: 0.7rem; padding: 2px 8px; }
     .countdown-action-buttons { gap: 10px; }
     .countdown-btn { padding: 8px 18px; font-size: 0.8rem; }
-    
-    .form-row { flex-direction: column; gap: 20px; }
-    .tf-divider { display: none; }
 
-    /* Location Responsive - Tablet */
+    /* Story Section - Tablet */
+    .story-section { padding: 65px 16px; }
+    .story-grid { grid-template-columns: 1fr; gap: 24px; }
+    .story-img-frame { height: 260px; }
+    .story-content { padding: 24px 20px; }
+
+    /* Events Section - Tablet */
+    .events-section { padding: 65px 16px; }
+    .timeline-container { margin-top: 36px; gap: 20px; }
+    .timeline-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+        padding: 24px 20px;
+        gap: 16px;
+    }
+    .event-time-badge { width: 100%; max-width: 260px; }
+    .event-icon-box { margin: 0 auto; }
+    .event-actions { width: 100%; display: flex; justify-content: center; }
+
+    /* Gallery Section - Tablet */
+    .gallery-section { padding: 65px 16px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .gallery-item { height: 220px; }
+
+    /* Lightbox Modal - Tablet */
+    .lightbox-close { top: 20px; right: 20px; font-size: 2rem; }
+    .lightbox-nav { width: 44px; height: 44px; font-size: 1.2rem; }
+    .lightbox-nav.prev { left: 16px; }
+    .lightbox-nav.next { right: 16px; }
+    .lightbox-content { padding: 0 16px; }
+
+    /* Location Section - Tablet */
     .location-section { padding: 65px 16px; }
     .venue-info-card { padding: 28px 20px; }
     .venue-title { font-size: 1.75rem; }
     .map-container, .map-container iframe { min-height: 300px; }
+
+    /* RSVP Section - Tablet */
+    .rsvp-section { padding: 65px 16px; }
+    .rsvp-card-container { padding: 36px 26px; }
+    .form-row { flex-direction: column; gap: 20px; }
+
+    /* Wishes Section - Tablet */
+    .wishes-section { padding: 65px 16px 75px; }
+    .wishes-wall-grid { grid-template-columns: 1fr; }
+    .wishes-action-bar { flex-direction: column; gap: 12px; }
+    .wishes-count-pill,
+    .btn-share-blessing {
+        width: 100%;
+        justify-content: center;
+    }
+    .blessing-modal-dialog {
+        padding: 28px 20px 24px;
+        border-radius: 18px;
+    }
+    .blessing-badge-picker {
+        grid-template-columns: 1fr;
+    }
+
+    /* Template Features Bar & Footer - Tablet */
+    .template-features-bar { gap: 14px 20px; padding: 14px 16px; }
+    .tf-divider { display: none; }
+    .site-footer { padding: 50px 16px 28px 16px; }
 }
 
+/* --- MOBILE PHONES (<= 480px) --- */
 @media (max-width: 480px) {
-    .hero-section { padding: clamp(8px, 1.5vh, 14px) 10px; }
-    .hero-card-frame { padding: clamp(14px, 1.8vh, 20px) 10px clamp(10px, 1.4vh, 16px) 10px; border-radius: 18px; }
-    .hero-couple-img-wrapper { width: clamp(118px, 15vh, 145px); height: clamp(152px, 19.5vh, 190px); border-radius: 75px 75px 14px 14px; }
-    .mandala-halo { width: clamp(160px, 20vh, 205px); height: clamp(160px, 20vh, 205px); }
-    .hero-cta-buttons { flex-direction: row; flex-wrap: wrap; width: 100%; gap: 6px; justify-content: center; }
-    .btn-hero-rsvp, .btn-hero-schedule { width: auto; flex: 1 1 calc(50% - 6px); padding: 7px 8px; font-size: 0.72rem; justify-content: center; }
-    .calendar-btn-group { width: 100%; flex: 1 1 100%; }
-    .btn-calendar { width: 100%; padding: 7px 10px; font-size: 0.72rem; justify-content: center; }
-    .calendar-menu { width: 100%; min-width: 0; }
-    .couple-names { font-size: clamp(1.45rem, 2.8vh, 1.8rem); }
-    .couple-names .ampersand { font-size: clamp(1.4rem, 2.7vh, 1.7rem); margin: 0 3px; }
-    .parents-line { font-size: 0.95rem; }
-    .wedding-invitation-text { font-size: 0.72rem; line-height: 1.35; margin-bottom: 6px; }
+    /* Header & Brand */
+    .site-header { padding: 8px 0; }
+    .site-header.scrolled { padding: 8px 0; }
+    .header-container { padding: 0 12px; }
+    .brand-logo { gap: 8px; }
+    .brand-crest { width: 34px; height: 34px; }
+    .brand-names { font-size: 1.15rem; letter-spacing: 0.3px; }
+    .brand-amp { font-size: 1.05rem; }
+    .brand-sub { font-size: 0.52rem; letter-spacing: 1px; }
+    .audio-btn { width: 38px; height: 38px; }
+    .mobile-toggle { font-size: 1.35rem; }
+
+    /* Mobile Overlay Drawer */
+    .mobile-overlay {
+        padding: 60px 20px 30px;
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .close-menu {
+        top: 16px;
+        right: 16px;
+        font-size: 1.75rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-nav-links { gap: 16px; width: 100%; text-align: center; }
+    .mobile-link {
+        font-size: clamp(1.25rem, 3.6vh, 1.65rem);
+        padding: 6px 12px;
+        display: block;
+    }
+    .btn-mobile-rsvp {
+        padding: 10px 28px;
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+
+    /* Section Headers */
+    .section-title {
+        font-size: 1.45rem;
+        letter-spacing: 1.5px;
+    }
+    .section-subtitle-script {
+        font-size: 1.75rem;
+        margin-bottom: -4px;
+    }
+    .kolam-divider {
+        margin: 6px auto 14px auto;
+    }
+
+    /* Hero Section - Mobile */
+    .hero-section {
+        padding: 16px 10px 24px 10px;
+        height: auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+    .auspicious-invoc {
+        padding: 2px 12px;
+        gap: 8px;
+        margin-bottom: 6px;
+    }
+    .sacred-om { font-size: 1rem; }
+    .sacred-text { font-size: 0.78rem; letter-spacing: 2px; }
+    .header-script-badge { margin-bottom: 3px; gap: 8px; }
+    .header-script-badge .line { width: 30px; }
+    .badge-text { font-size: 0.7rem; letter-spacing: 2px; gap: 5px; }
+    .hero-tagline { font-size: 0.64rem; letter-spacing: 1px; margin-bottom: 6px; }
+
+    .hero-card-frame {
+        padding: 18px 12px 16px 12px;
+        border-radius: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .card-toran-header { margin-bottom: 10px; }
+    .hero-portrait-stage { margin-bottom: 8px; }
+    .hero-couple-img-wrapper {
+        width: clamp(116px, 15vh, 140px);
+        height: clamp(150px, 19.5vh, 182px);
+        border-radius: 75px 75px 14px 14px;
+    }
+    .mandala-halo {
+        width: clamp(160px, 20vh, 200px);
+        height: clamp(160px, 20vh, 200px);
+    }
     .couple-tag { display: none; }
     .brass-diya { display: none; }
-    .hero-tagline { font-size: 0.65rem; letter-spacing: 1px; margin-bottom: 6px; }
-    .venue-city-pill { font-size: 0.68rem; padding: 4px 8px; margin-bottom: 8px; }
-    .venue-city-pill .venue-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
-    .scroll-down-indicator { margin-top: 4px; font-size: 0.62rem; }
+    
+    .couple-names {
+        font-size: clamp(1.5rem, 3vh, 1.85rem);
+        margin-bottom: 4px;
+    }
+    .couple-names .ampersand {
+        font-size: clamp(1.4rem, 2.8vh, 1.7rem);
+        margin: 0 3px;
+    }
+    .parents-line { font-size: 0.9rem; margin-bottom: 2px; }
+    .wedding-invitation-text {
+        font-size: 0.72rem;
+        line-height: 1.35;
+        margin-bottom: 8px;
+        padding: 0 4px;
+    }
+
+    /* Wedding Date & Lagnam Card in Hero */
+    .wedding-date-card {
+        padding: 8px 10px;
+        gap: 6px;
+        flex-direction: column;
+        border-radius: 14px;
+        margin-bottom: 8px;
+    }
+    .date-primary { font-size: 0.76rem; letter-spacing: 0.5px; }
+    .muhurtham-badge-row { font-size: 0.65rem; letter-spacing: 0.3px; gap: 4px; }
+    .venue-city-pill {
+        font-size: 0.68rem;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+        max-width: 100%;
+    }
+    .venue-city-pill .venue-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 220px;
+    }
+
+    /* Hero CTA Buttons */
+    .hero-cta-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 6px;
+        justify-content: center;
+    }
+    .btn-hero-rsvp, .btn-hero-schedule {
+        width: auto;
+        flex: 1 1 calc(50% - 6px);
+        padding: 8px 6px;
+        font-size: 0.72rem;
+        justify-content: center;
+    }
+    .calendar-btn-group {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+    .btn-calendar {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 0.72rem;
+        justify-content: center;
+    }
+    .calendar-menu { width: 100%; min-width: 0; }
+    .scroll-down-indicator { margin-top: 6px; font-size: 0.62rem; }
     .scroll-mouse-anim { height: 18px; width: 13px; }
 
-    /* Countdown Responsive - Mobile */
-    .countdown-section { padding: 50px 12px 42px 12px; }
-    .countdown-auspicious-badge { font-size: 0.68rem; padding: 4px 12px; letter-spacing: 1px; margin-bottom: 10px; }
+    /* Countdown Section - Mobile */
+    .countdown-section { padding: 48px 12px 40px 12px; }
+    .countdown-auspicious-badge {
+        font-size: 0.66rem;
+        padding: 4px 10px;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
     .countdown-section .section-title { font-size: 1.45rem; letter-spacing: 1.5px; }
     .countdown-section .section-subtitle-script { font-size: 1.85rem; }
-    .countdown-lead-quote { font-size: 0.94rem; line-height: 1.5; margin-bottom: 20px; }
-    .timer-grid { gap: 4px; padding: 0; }
-    .timer-card { min-width: 56px; border-radius: 10px; }
-    .timer-card-inner { padding: 10px 2px 8px 2px; }
-    .timer-number { font-size: 1.55rem; }
+    .countdown-lead-quote { font-size: 0.92rem; line-height: 1.5; margin-bottom: 18px; }
+    .timer-grid {
+        gap: 4px;
+        padding: 0;
+        width: 100%;
+        margin: 20px auto 26px auto;
+    }
+    .timer-card {
+        min-width: 0;
+        flex: 1 1 0;
+        border-radius: 10px;
+    }
+    .timer-card-inner { padding: 9px 2px 7px 2px; }
+    .timer-number { font-size: 1.5rem; }
     .timer-number-wrapper { height: 32px; }
-    .timer-label { font-size: 0.54rem; letter-spacing: 0.8px; margin-top: 3px; }
-    .timer-sublabel { font-size: 0.5rem; letter-spacing: 0; }
+    .timer-label { font-size: 0.52rem; letter-spacing: 0.6px; margin-top: 3px; }
+    .timer-sublabel { font-size: 0.48rem; letter-spacing: 0; }
     .timer-corner { display: none; }
     .seconds-pulse-beacon { width: 6px; height: 6px; right: 0; top: 2px; }
-    .timer-colon-wrapper .colon-gem { font-size: 0.65rem; }
+    .timer-colon-wrapper { gap: 2px; }
+    .timer-colon-wrapper .colon-gem { font-size: 0.6rem; }
     .timer-colon-wrapper .colon-dot { width: 2.5px; height: 2.5px; }
-    .wedding-date-card.countdown-date-card { padding: 14px 12px; border-radius: 20px; gap: 8px; flex-direction: column; width: 100%; }
-    .countdown-section .brass-diya { display: inline-flex; width: 22px; }
-    .countdown-date-card .date-primary { font-size: 0.78rem; letter-spacing: 0.8px; }
-    .countdown-date-card .muhurtham-badge-row { font-size: 0.68rem; letter-spacing: 0.5px; }
-    .panchang-pill { font-size: 0.64rem; padding: 2px 6px; }
-    .muhurtham-venue-tag { font-size: 0.7rem; text-align: center; }
+    .wedding-date-card.countdown-date-card {
+        padding: 12px 10px;
+        border-radius: 16px;
+        gap: 8px;
+        flex-direction: column;
+        width: 100%;
+    }
+    .countdown-section .brass-diya { display: inline-flex; width: 20px; }
+    .countdown-date-card .date-primary { font-size: 0.76rem; letter-spacing: 0.6px; }
+    .countdown-date-card .muhurtham-badge-row { font-size: 0.66rem; letter-spacing: 0.4px; }
+    .panchang-pill { font-size: 0.62rem; padding: 2px 6px; }
+    .muhurtham-venue-tag { font-size: 0.68rem; text-align: center; }
     .countdown-action-buttons { flex-direction: column; width: 100%; gap: 8px; }
     .countdown-btn, .countdown-cal-dropdown { width: 100%; }
     .countdown-btn { width: 100%; justify-content: center; }
     .countdown-cal-menu { width: 100%; min-width: 0; }
 
-    /* Location Responsive - Mobile */
-    .location-section { padding: 50px 12px; }
-    .venue-info-card { padding: 22px 14px; }
-    .venue-title { font-size: 1.5rem; }
-    .venue-address-card { flex-direction: column; text-align: center; gap: 10px; }
-    .venue-address-text { align-items: center; }
-    .venue-transit-grid { grid-template-columns: 1fr; gap: 8px; }
-    .transit-item { flex-direction: row; justify-content: flex-start; text-align: left; padding: 10px 14px; gap: 12px; }
+    /* Story Section - Mobile */
+    .story-section { padding: 48px 12px; }
+    .story-quote { font-size: 0.95rem; padding: 0 4px; }
+    .story-grid { gap: 18px; margin-top: 28px; }
+    .story-img-frame { height: 200px; }
+    .story-content { padding: 18px 14px; }
+    .story-content h3 { font-size: 1.25rem; }
+    .story-period { font-size: 0.75rem; margin-bottom: 10px; }
+    .story-content p { font-size: 0.88rem; line-height: 1.55; }
+
+    /* Events Section - Mobile */
+    .events-section { padding: 48px 12px; }
+    .events-subtitle { font-size: 0.88rem; padding: 0 4px; }
+    .timeline-container { margin-top: 28px; gap: 16px; }
+    .timeline-card { padding: 18px 12px; gap: 12px; }
+    .event-time-badge { padding: 10px; border-radius: 6px; }
+    .event-date { font-size: 0.7rem; }
+    .event-hour { font-size: 0.95rem; }
+    .event-icon-box { width: 42px; height: 42px; font-size: 1rem; }
+    .event-details h3 { font-size: 1.22rem; }
+    .event-type { font-size: 0.78rem; }
+    .event-location { font-size: 0.78rem; text-align: left; }
+    .event-desc { font-size: 0.84rem; line-height: 1.5; text-align: left; margin-bottom: 12px; }
+    .btn-cal { width: 100%; justify-content: center; font-size: 0.72rem; padding: 7px 12px; }
+
+    /* Gallery Section - Mobile (2-Column Grid) */
+    .gallery-section { padding: 48px 12px; }
+    .gallery-filters { gap: 6px; margin-bottom: 20px; }
+    .filter-btn { padding: 5px 12px; font-size: 0.74rem; }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .gallery-item {
+        height: 160px;
+        border-radius: 10px;
+    }
+    .gallery-overlay i { font-size: 1.3rem; }
+    .gallery-overlay span { font-size: 0.82rem; }
+
+    /* Lightbox Modal - Mobile */
+    .lightbox-modal { padding: 10px; }
+    .lightbox-content { padding: 0 8px; width: 100%; }
+    .lightbox-content img {
+        max-height: 60vh;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    .lightbox-close {
+        top: 14px;
+        right: 14px;
+        font-size: 1.6rem;
+    }
+    .lightbox-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .lightbox-nav.prev { left: 8px; }
+    .lightbox-nav.next { right: 8px; }
+    .lightbox-caption { font-size: 0.9rem; margin-top: 8px; }
+
+    /* Location Section - Mobile */
+    .location-section { padding: 48px 12px; }
+    .location-subtitle { font-size: 0.88rem; }
+    .venue-info-card { padding: 20px 12px; border-radius: 16px; }
+    .venue-title { font-size: 1.4rem; }
+    .venue-subheading { font-size: 0.84rem; margin-bottom: 14px; }
+    .venue-address-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 12px 10px;
+    }
+    .venue-address-text { align-items: center; font-size: 0.82rem; }
+    .venue-copy-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.76rem;
+    }
+    .venue-halls-showcase { padding: 10px; }
+    .hall-pill { font-size: 0.7rem; padding: 3px 8px; }
+    .venue-transit-grid { grid-template-columns: 1fr; gap: 8px; margin-bottom: 18px; }
+    .transit-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        padding: 10px 12px;
+        gap: 12px;
+    }
     .transit-info { display: flex; flex-direction: column; align-items: flex-start; }
-    .landmarks-grid { grid-template-columns: 1fr; }
+    .transit-info strong { font-size: 0.78rem; }
+    .transit-info span { font-size: 0.68rem; }
+    .landmarks-grid { grid-template-columns: 1fr; gap: 8px; }
+    .landmark-pill { font-size: 0.72rem; padding: 4px 8px; }
     .venue-buttons { flex-direction: column; width: 100%; gap: 8px; }
-    .venue-buttons .venue-action-btn { width: 100%; }
-    .map-topbar { flex-direction: column; gap: 8px; align-items: flex-start; }
-    .map-container, .map-container iframe { min-height: 280px; }
+    .venue-buttons .venue-action-btn { width: 100%; font-size: 0.8rem; padding: 10px; }
+    .map-topbar { flex-direction: column; gap: 8px; align-items: flex-start; padding: 10px 12px; }
+    .map-container, .map-container iframe { min-height: 250px; height: 250px; }
+
+    /* RSVP Section - Mobile */
+    .rsvp-section { padding: 48px 12px; }
+    .rsvp-card-container {
+        padding: 24px 14px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(78, 13, 13, 0.08);
+    }
+    .rsvp-main-title { font-size: 1.75rem; letter-spacing: 2px; }
+    .by-date-badge { font-size: 0.7rem; letter-spacing: 1px; }
+    .rsvp-intro-text { font-size: 0.75rem; letter-spacing: 0.8px; margin-bottom: 20px; }
+    .form-group label { font-size: 0.72rem; letter-spacing: 1px; }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.88rem;
+    }
+    .radio-options, .checkbox-options { gap: 10px 14px; }
+    .radio-card, .checkbox-card { font-size: 0.82rem; }
+    .btn-rsvp-submit {
+        padding: 13px;
+        font-size: 0.92rem;
+        margin-top: 8px;
+    }
+
+    /* Wishes Wall Section - Mobile */
+    .wishes-section { padding: 48px 12px 60px; }
+    .wishes-intro { font-size: 0.88rem; }
+    .wishes-action-bar { margin: 18px auto 32px auto; gap: 10px; }
+    .wishes-count-pill { font-size: 0.82rem; padding: 10px 18px; }
+    .btn-share-blessing { font-size: 0.85rem; padding: 11px 20px; }
+    .wish-card {
+        padding: 18px 14px 14px 14px;
+        border-radius: 14px;
+    }
+    .wish-avatar { width: 38px; height: 38px; min-width: 38px; font-size: 1rem; }
+    .wish-author { font-size: 1.05rem; }
+    .wish-badge { font-size: 0.65rem; padding: 2px 8px; }
+    .wish-text { font-size: 0.88rem; line-height: 1.55; margin-bottom: 14px; }
+    .wish-like-btn { font-size: 0.76rem; padding: 4px 10px; }
+
+    /* Blessing Modal - Mobile */
+    .blessing-modal { padding: 10px; }
+    .blessing-modal-dialog {
+        padding: 22px 14px 18px;
+        border-radius: 16px;
+        max-height: 94vh;
+    }
+    .blessing-modal-close {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+    }
+    .blessing-modal-symbol { font-size: 1.75rem; }
+    .blessing-modal-title { font-size: 1.4rem; }
+    .blessing-modal-desc { font-size: 0.8rem; margin-bottom: 14px; }
+    .blessing-chip { font-size: 0.7rem; padding: 4px 8px; }
+    .badge-option span { padding: 8px 10px; font-size: 0.78rem; }
+    .btn-blessing-submit { padding: 12px 20px; font-size: 0.88rem; }
+
+    /* Template Features Bar & Footer - Mobile */
+    .template-features-bar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 12px;
+        text-align: center;
+    }
+    .tf-item { font-size: 0.68rem; letter-spacing: 1px; }
+    .site-footer { padding: 45px 12px 24px 12px; text-align: center; }
+    .footer-monogram { font-size: 1.75rem; }
+    .footer-title { font-size: 1.75rem; }
+    .footer-quote { font-size: 0.88rem; margin-bottom: 20px; }
+    .footer-share-links { gap: 10px; margin-bottom: 24px; }
+    .share-btn { width: 38px; height: 38px; font-size: 1rem; }
+    .copyright { font-size: 0.72rem; }
+
+    /* Floating Actions - Mobile */
+    .back-to-top {
+        bottom: 18px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+    .toast-notification {
+        bottom: 68px;
+        right: 16px;
+        left: 16px;
+        max-width: calc(100vw - 32px);
+        font-size: 0.78rem;
+        padding: 9px 16px;
+        justify-content: center;
+    }
 }
 
-@media (max-height: 540px) {
+/* --- EXTRA-SMALL MOBILE PHONES (<= 360px) --- */
+@media (max-width: 360px) {
+    .brand-sub { display: none; }
+    .brand-names { font-size: 1.05rem; }
+    .hero-card-frame { padding: 14px 8px 12px 8px; }
+    .couple-names { font-size: 1.35rem; }
+    .couple-names .ampersand { font-size: 1.25rem; }
+    .timer-colon-wrapper { display: none; }
+    .timer-card { min-width: 0; flex: 1 1 0; }
+    .timer-number { font-size: 1.35rem; }
+    .timer-label { font-size: 0.48rem; letter-spacing: 0; }
+    .btn-hero-rsvp, .btn-hero-schedule { flex: 1 1 100%; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item { height: 190px; }
+}
+
+/* --- SHORT SCREENS & LANDSCAPE ORIENTATION --- */
+@media (max-height: 600px) {
     .hero-section {
         height: auto;
         min-height: 100vh;
         min-height: 100dvh;
         overflow-y: auto;
-        padding: 16px 12px;
+        padding: 20px 12px;
+    }
+    .hero-card-frame {
+        padding: 16px 14px;
+    }
+    .hero-couple-img-wrapper {
+        width: 100px;
+        height: 130px;
+    }
+    .mandala-halo {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* --- SAFE AREA INSETS (Notched Devices) --- */
+@supports (padding-top: env(safe-area-inset-top)) {
+    .site-header {
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-left: max(12px, env(safe-area-inset-left));
+        padding-right: max(12px, env(safe-area-inset-right));
+    }
+    .mobile-overlay {
+        padding-top: max(50px, env(safe-area-inset-top) + 20px);
+        padding-bottom: max(30px, env(safe-area-inset-bottom) + 15px);
+    }
+    .site-footer {
+        padding-bottom: max(30px, env(safe-area-inset-bottom) + 20px);
+    }
+    .back-to-top {
+        bottom: max(20px, env(safe-area-inset-bottom) + 10px);
+        right: max(20px, env(safe-area-inset-right) + 10px);
+    }
+    .toast-notification {
+        bottom: max(74px, env(safe-area-inset-bottom) + 60px);
     }
 }

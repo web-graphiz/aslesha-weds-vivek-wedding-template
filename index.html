@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#7A1C1C">
     <title>Aslesha & Vivek — South Indian Wedding Celebration</title>
     <meta name="description" content="We invite you to celebrate the traditional South Indian wedding ceremony of Aslesha and Vivek. Join us in Chennai for Muhurtham, Sangeet & Festivities.">
     
@@ -25,18 +26,20 @@
     <!-- Navigation Header -->
     <header class="site-header" id="header">
         <div class="header-container">
-            <a href="#hero" class="brand-logo">
-                <span class="monogram">A & V</span>
-                <span class="brand-sub">Aslesha & Vivek</span>
+            <a href="#hero" class="brand-logo" aria-label="Aslesha &amp; Vivek - Wedding Celebration">
+                <span class="brand-details">
+                    <span class="brand-names">Aslesha <span class="brand-amp">&amp;</span> Vivek</span>
+                    <span class="brand-sub"><i class="fa-solid fa-gem sub-diamond"></i> Traditional Wedding</span>
+                </span>
             </a>
 
             <nav class="nav-menu" id="nav-menu">
                 <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="#story" class="nav-link"><i class="fa-solid fa-heart"></i> Our Story</a>
                 <a href="#events" class="nav-link"><i class="fa-solid fa-calendar-days"></i> Events</a>
-                <a href="#colors" class="nav-link"><i class="fa-solid fa-palette"></i> Colors</a>
                 <a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> Gallery</a>
                 <a href="#location" class="nav-link"><i class="fa-solid fa-location-dot"></i> Venue</a>
+                <a href="#wishes" class="nav-link"><i class="fa-solid fa-hands-praying"></i> Blessings</a>
                 <a href="#rsvp" class="nav-link btn-nav-rsvp"><i class="fa-solid fa-envelope-open-text"></i> RSVP</a>
             </nav>
 
@@ -64,11 +67,10 @@
             <a href="#hero" class="mobile-link">Home</a>
             <a href="#story" class="mobile-link">Our Story</a>
             <a href="#events" class="mobile-link">Wedding Events</a>
-            <a href="#colors" class="mobile-link">Color Palette</a>
             <a href="#gallery" class="mobile-link">Photo Gallery</a>
             <a href="#location" class="mobile-link">Location & Venue</a>
-            <a href="#rsvp" class="mobile-link btn-mobile-rsvp">RSVP Now</a>
             <a href="#wishes" class="mobile-link">Blessings Wall</a>
+            <a href="#rsvp" class="mobile-link btn-mobile-rsvp">RSVP Now</a>
         </div>
     </div>
 
@@ -249,8 +251,6 @@
 
                     <p class="parents-line">Together with their families</p>
                     <p class="wedding-invitation-text">Cordially invite you to celebrate the sacred Muhurtham and joyous union of their hearts</p>
-                    
-                    
 
                     <!-- Venue Quick Link with Pulse Location Pin -->
                     <a href="#location" class="venue-city-pill" title="View Venue & Directions">
@@ -991,31 +991,99 @@
                         <span class="diamond">❖</span>
                         <span class="dot"></span>
                     </div>
-                    <p class="wishes-intro">Leave your heartfelt wishes for Aslesha & Vivek as they embark on this sacred journey.</p>
+                    <p class="wishes-intro">Leave your heartfelt wishes, prayers, and blessings for Aslesha &amp; Vivek as they embark on this sacred journey together.</p>
+
+                    <!-- Action Bar with Stats & Share Blessing Button -->
+                    <div class="wishes-action-bar">
+                        <div class="wishes-count-pill" id="wishes-count-pill">
+                            <i class="fa-solid fa-hands-praying"></i>
+                            <span id="wishes-count-text">7 Heartfelt Blessings Received</span>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-share-blessing" id="open-blessing-modal-btn">
+                            <i class="fa-solid fa-pen-fancy"></i>
+                            <span>Share Blessings</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="wishes-grid reveal fade-up">
-                    <!-- Wish Input Card -->
-                    <div class="add-wish-card">
-                        <h3><i class="fa-solid fa-pen-nib"></i> Leave a Blessing</h3>
-                        <form id="wish-form">
-                            <div class="form-group">
-                                <input type="text" id="wishAuthor" placeholder="Your Name & Relationship" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea id="wishText" rows="4" placeholder="Write your warm wishes for the couple..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Post Blessing</button>
-                        </form>
-                    </div>
-
-                    <!-- Wishes Container -->
-                    <div class="wishes-list" id="wishes-container">
-                        <!-- Default blessings loaded dynamically via JS -->
-                    </div>
+                <!-- Complete Wishes Wall: Displays ALL blessings elegantly in a responsive grid -->
+                <div class="wishes-wall-grid reveal fade-up" id="wishes-container">
+                    <!-- Blessings loaded dynamically via JS -->
                 </div>
             </div>
         </section>
+
+        <!-- BLESSING MODAL POPUP -->
+        <div class="blessing-modal" id="blessing-modal" aria-hidden="true" role="dialog" aria-labelledby="blessing-modal-title">
+            <div class="blessing-modal-backdrop" id="blessing-modal-backdrop"></div>
+            <div class="blessing-modal-dialog">
+                <button type="button" class="blessing-modal-close" id="close-blessing-modal-btn" aria-label="Close popup">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="blessing-modal-header text-center">
+                    <div class="blessing-modal-symbol">🪔</div>
+                    <div class="section-subtitle-script">Shower With Love</div>
+                    <h3 class="blessing-modal-title" id="blessing-modal-title">Share Your Blessing</h3>
+                    <div class="kolam-divider">
+                        <span class="dot"></span>
+                        <span class="diamond">❖</span>
+                        <span class="dot"></span>
+                    </div>
+                    <p class="blessing-modal-desc">Your kind words, sacred prayers, and warm wishes will forever illuminate this auspicious union.</p>
+                </div>
+
+                <form id="wish-form" class="blessing-modal-form">
+                    <div class="form-group">
+                        <label for="wishAuthor"><i class="fa-solid fa-user"></i> Your Name &amp; Relationship</label>
+                        <input type="text" id="wishAuthor" placeholder="e.g. Meenakshi Sundaram (Bride's Aunt)" required autocomplete="name">
+                    </div>
+
+                    <!-- Quick Pre-fill Blessing Chips for Easy One-Click Message Suggestions -->
+                    <div class="form-group quick-chips-group">
+                        <label class="quick-chips-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Need inspiration? Click to use an idea:</label>
+                        <div class="quick-blessings-chips">
+                            <button type="button" class="blessing-chip" data-text="Wishing you both a lifetime of love, laughter, prosperity, and timeless companionship. May Lord Venkateswara bless your sacred bond!">✨ Eternal Love &amp; Joy</button>
+                            <button type="button" class="blessing-chip" data-text="Ayushman Bhava! Heartiest congratulations to Aslesha &amp; Vivek on this blissful beginning. Stay blessed always!">🪔 Ayushman Bhava</button>
+                            <button type="button" class="blessing-chip" data-text="May your journey together be as sweet as payasam and as radiant as morning temple bells. Shubh Vivah!">🌸 Sweet &amp; Radiant Life</button>
+                            <button type="button" class="blessing-chip" data-text="So thrilled to celebrate your special day! Can't wait to dance and make unforgettable memories together!">🎉 Celebration &amp; Cheers</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wishText"><i class="fa-solid fa-feather"></i> Your Blessing Message</label>
+                        <textarea id="wishText" rows="4" placeholder="Write your heartfelt blessing, warm thoughts, or fond memories for the couple..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="badge-label"><i class="fa-solid fa-tag"></i> Blessing Category</label>
+                        <div class="blessing-badge-picker">
+                            <label class="badge-option">
+                                <input type="radio" name="blessingBadge" value="Family Blessing" checked>
+                                <span><i class="fa-solid fa-house-chimney-window"></i> Family</span>
+                            </label>
+                            <label class="badge-option">
+                                <input type="radio" name="blessingBadge" value="Friend's Love">
+                                <span><i class="fa-solid fa-heart"></i> Friend</span>
+                            </label>
+                            <label class="badge-option">
+                                <input type="radio" name="blessingBadge" value="Elder's Ashirwad">
+                                <span><i class="fa-solid fa-hands-praying"></i> Elder's Ashirwad</span>
+                            </label>
+                            <label class="badge-option">
+                                <input type="radio" name="blessingBadge" value="Well-wisher">
+                                <span><i class="fa-solid fa-star"></i> Well-wisher</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-blessing-submit">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Post Blessing to Wall</span>
+                    </button>
+                </form>
+            </div>
+        </div>
 
     </main>
 
@@ -1064,6 +1132,11 @@
         <i class="fa-solid fa-circle-check"></i>
         <span id="toast-message">Link copied to clipboard!</span>
     </div>
+
+    <!-- Back to Top Floating Arrow Button -->
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Scroll back to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
